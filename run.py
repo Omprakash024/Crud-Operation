@@ -10,13 +10,13 @@ if __name__ == "__main__":
     with flask_app.app_context():
         db.create_all()
 
-        if not UserCredential.query.filter_by(user_name="harry").first():
-            UserCredential.create_user(
-                user="harry",
-                email ="harry@gmail.com",
-                password="harry123"
+        # if not UserCredential.query.filter_by(user_name="harry").first():
+        #     UserCredential.create_user(
+        #         user="harry",
+        #         email ="harry@gmail.com",
+        #         password="harry123"
 
-            )
+        #     )
 
 
     flask_app.run()
