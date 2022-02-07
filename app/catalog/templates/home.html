@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{%block content%}
+    {% for  b in books %}
+      <div class="card col-sm-3 ml-2">
+          <div class="card-header">
+              <h5>{{b.title}}</h5>
+          </div>
+          <div class="card-body">
+             <ul>
+               <li><b>Author :</b> {{b.author}}</li>
+               <li><b>Rating :</b> {{b.avg_rating}}</li>
+               <li><b>Format :</b> {{b.format}}</li>
+               <li><b>Pages :</b> {{b.num_pages}}</li> 
+               <li><b>Published Date :</b> {{b.pub_date.strftime('%d-%m-%Y')}}</li>
+               <a href="{{url_for('main.show_publisher',publisher_id=b.pub_id)}}"> <li><b>Published By: </b>{{b.pub_id}}</li></a>
+
+               <a href="{{url_for('main.add_book',pub_id=b.pub_id)}}" class="btn btn-warning">create</a>
+               <a href="{{url_for('main.delete_book',book_id=b.id)}}" class="btn btn-danger">delete</a>
+               <a href="{{url_for('main.edit_book',book_id=b.id)}}" class="btn btn-info">Edit</a>
+               
+              </ul>
+          </div>
+      </div>
+    <!-- <div class="cont">
+       <h2>Title : {{b.title}} </h2>
+       <h3>Author : {{b.author}}</h3>
+       <h3>Rating : {{b.avg_rating}}</h3>
+       <h3>Format : {{b.format}}</h3>
+       <h3>Pages : {{b.num_pages}}</h3>
+       <h3>Published date: {{b.pub_date}}</h3>
+       <h3><a href="{{url_for('main.show_publisher',publisher_id=b.pub_id)}}">Published By : {{b.pub_id}}</a></h3>
+     </div> -->
+     {%endfor%}
+{%endblock content%}
+    
+  

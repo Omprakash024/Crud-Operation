@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{%block content%}
+    <h2 class="text-center my-3 py-3">Published by {{publisher}}</h2>
+    {% for  b in publisher_books %}
+      <div class="card col-sm-3 ml-2">
+          <div class="card-header">
+              <h5>{{b.title}}</h5>
+          </div>
+          <div class="card-body">
+             <ul>
+               <li><b>Author :</b> {{b.author}}</li>
+               <li><b>Rating :</b> {{b.avg_rating}}</li>
+               <li><b>Format :</b> {{b.format}}</li>
+               <li><b>Pages :</b> {{b.num_pages}}</li>
+               <li><b>Published Date :</b> {{b.pub_date.strftime('%d-%m-%Y')}}</li>
+              </ul>
+          </div>
+      </div>
+   
+     {%endfor%}
+{%endblock content%}
+    
+  

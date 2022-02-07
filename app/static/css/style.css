@@ -1,0 +1,46 @@
+*{
+    justify-content: center;
+}
+
+.card{
+    display: inline-block;
+    border: 1.5px solid #0d6efd ;
+    /* width: 22%;  */
+    margin: 2rem;
+    border-radius:1.5rem;
+
+}
+
+.card .card-header{
+    background-color: transparent;
+    /* background-color: none; */
+    border:none;
+    border-bottom:2px solid #0d6efd ;
+    border-radius: 1.5rem;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.card-body ul{
+    padding:2rem 3.5rem;
+    list-style: none;
+}
+.card-body ul li{
+    margin: 0.7rem;
+}
+
+.register{
+    border: 3px solid #0d6efd;
+    transform: translateY(12rem);
+    border-radius:1rem;
+
+}
+
+#submit{
+    display: block;
+    background-color: #0d6efd;
+    color: white;
+    text-align: center;
+    margin: auto;
+    transform: translateY(20px);
+}

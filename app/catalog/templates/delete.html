@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{%block content%}
+      <h3 class="text-center">Are you sure ?</h3>
+      <div class="card col-sm-3 ml-2">
+          <div class="card-header">
+              <h5>{{book.title}}</h5>
+          </div>
+          <div class="card-body">
+             <ul>
+               <li><b>Author :</b> {{book.author}}</li>
+               <li><b>Rating :</b> {{book.avg_rating}}</li>
+               <li><b>Format :</b> {{book.format}}</li>
+               <li><b>Pages :</b> {{book.num_pages}}</li> 
+               <li><b>Published Date :</b> {{book.pub_date.strftime('%d-%m-%Y')}}</li>
+               <a href="{{url_for('main.show_publisher',publisher_id=book.pub_id)}}"> <li><b>Published By: </b>{{book.pub_id}}</li></a>
+               <form action="{{url_for('main.delete_book',book_id = book_id)}}" method="POST">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>  
+            </ul>
+          </div>
+      </div>
+   
+{%endblock content%}
+    
+  

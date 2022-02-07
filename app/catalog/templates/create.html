@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{%block content%}
+      <div class="card col-sm-3 ml-2">
+          <div class="card-header">
+          </div>
+          <div class="card-body">
+            {{form.hidden_tag()}}  
+            {{wtf.quick_form(form)}}
+          </div>
+      </div>
+   
+{%endblock content%}
+    
+  
